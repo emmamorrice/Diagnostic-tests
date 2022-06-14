@@ -36,7 +36,7 @@ jobs:
         flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
     - name: Run python script
       run: |
-        python diagnostic.py
+        python 'py/diagnostic.py'
       env:
         key: ${{ secrets.key }} # if run.py requires passwords..etc, set it as secrets
     - name: commit files
