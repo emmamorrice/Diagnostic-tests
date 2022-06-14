@@ -12,7 +12,7 @@ diagnostic['MonthEnding'] = pd.to_datetime(diagnostic['MonthEnding'], format='%Y
 
 diagnostic1= diagnostic.drop(columns=['NumberOnListQF', 'NumberWaitingOverFourWeeksQF', 'NumberWaitingOverSixWeeksQF', 'HB', 'HBDateEnacted', 'HBDateArchived', 'Country'])
 diagnostic2= diagnostic1.rename(columns={'DiagnosticTestType': 'Diagnostic test type', 'DiagnosticTestDescription': 'Diagnostic test description', 'NumberOnList': 'Number of people on list', 'NumberWaitingOverFourWeeks': 'Number of people waiting more than four weeks', 'NumberWaitingOverSixWeeks': 'Number waiting more than six weeks', 'HBName': 'Health board'})
-diagnostic2.to_csv(r'C:\Users\emma.morrice\OneDrive - D.C. Thomson & Co Ltd\Documents/diagnostic.csv')
+diagnostic2.to_csv(r'data/diagnostic.csv')
 
 diagnostic2_barium= diagnostic2[diagnostic2['Diagnostic test description']=='Barium Studies']
 diagnostic2_colonoscopy= diagnostic2[diagnostic2['Diagnostic test description']=='Colonoscopy']
