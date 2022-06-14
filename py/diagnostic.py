@@ -23,11 +23,11 @@ diagnostic2_MRI= diagnostic2[diagnostic2['Diagnostic test description']=='Magnet
 diagnostic2_NonObstetricUltrasound= diagnostic2[diagnostic2['Diagnostic test description']=='Non-obstetric ultrasound']
 diagnostic2_UpperEndoscopy= diagnostic2[diagnostic2['Diagnostic test description']=='Upper Endoscopy']
 
-diagnostic2_barium.to_csv(r'Diagnostic-tests/data/diagnosticBARIUM.csv')
-diagnostic2_colonoscopy.to_csv(r'Diagnostic-tests/data/diagnosticCOLONOSCOPY.csv')
-diagnostic2_CT.to_csv(r'data/Diagnostic-tests/diagnosticCT.csv')
-diagnostic2_Cystoscopy.to_csv(r'Diagnostic-tests/data/diagnosticCYSTOSCOPY.csv')
-diagnostic2_LowerEndoscopy.to_csv(r'Diagnostic-tests/data/diagnosticLOWERENDOSCOPY.csv')
-diagnostic2_MRI.to_csv(r'Diagnostic-tests/data/diagnosticMRI.csv')
-diagnostic2_NonObstetricUltrasound.to_csv(r'Diagnostic-tests/data/diagnosticNONOBULTRASOUND.csv')
-diagnostic2_UpperEndoscopy.to_csv(r'Diagnostic-tests/data/diagnosticUPPERENDOSCOPY.csv')
+diagnostic2_barium.to_csv(r'/data/diagnosticBARIUM.csv')
+diagnostic2_colonoscopy.to_csv(r'/data/diagnosticCOLONOSCOPY.csv')
+diagnostic2_CT.to_csv(r'/data/diagnosticCT.csv')
+diagnostic2_Cystoscopy.to_csv(r'/data/diagnosticCYSTOSCOPY.csv')
+diagnostic2_LowerEndoscopy.to_csv(r'/data/diagnosticLOWERENDOSCOPY.csv')
+diagnostic2_MRI.to_csv(r'/data/diagnosticMRI.csv')
+diagnostic2_NonObstetricUltrasound.to_csv(r'/data/diagnosticNONOBULTRASOUND.csv')
+diagnostic2_UpperEndoscopy.to_csv(r'/data/diagnosticUPPERENDOSCOPY.csv')
