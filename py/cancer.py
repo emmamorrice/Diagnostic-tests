@@ -15,5 +15,5 @@ cancer31dayfinal = merge1.drop(columns=['HBTQF','CancerTypeQF', 'NumberOfEligibl
 cancer62dayfinal = merge2.drop(columns=['HBQF','CancerTypeQF', 'NumberOfEligibleReferrals62DayStandardQF', 'NumberOfEligibleReferralsTreatedWithin62DaysQF', 'HB_y', 'HBDateEnacted', 'HBDateArchived'])
 
 #saving the final dataset as a csv
-cancer31dayfinal.to_csv(r'C:\Users\emma.morrice\OneDrive - D.C. Thomson & Co Ltd\Documents/cancer31day.csv')
-cancer62dayfinal.to_csv(r'C:\Users\emma.morrice\OneDrive - D.C. Thomson & Co Ltd\Documents/cancer62day.csv')
+cancer31dayfinal.to_csv(r'data/cancer31day.csv')
+cancer62dayfinal.to_csv(r'data/cancer62day.csv')
