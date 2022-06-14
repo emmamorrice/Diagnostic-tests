@@ -38,16 +38,13 @@ jobs:
         python 'py/diagnostic.py'
       env:
         key: ${{ secrets.key }} # if run.py requires passwords..etc, set it as secrets
-    - name: commit files
+        
+    - name: Run python script
       run: |
-        git config --local user.name actions-user
-        git config --local user.email "actions@github.com"
-        git add data/*
-        git commit -m "GH ACTION Headlines $(date)"
-        git push origin main
+        python 'py/cancer.py'
       env:
-        REPO_KEY: ${{secrets.GITHUB_TOKEN}}
-        username: github-actions
+        key: ${{ secrets.key }} # if run.py requires passwords..etc, set it as secrets
+   
 
     - name: Test 
       run: |
