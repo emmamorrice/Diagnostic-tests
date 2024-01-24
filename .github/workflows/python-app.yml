@@ -4,6 +4,8 @@
 name: Python application
 
 on:
+  schedule: 
+    - cron: "00 13 * * TUE"
   push:
     branches: [ "main" ]
   pull_request:
@@ -33,25 +35,16 @@ jobs:
         flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
         # exit-zero treats all errors as warnings. The GitHub editor is 127 chars wide
         flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
-    - name: Run python script
-      run: |
-        python 'py/diagnostic.py'
-      env:
-        key: ${{ secrets.key }} # if run.py requires passwords..etc, set it as secrets
         
-    - name: Run python script
-      run: |
-        python 'py/cancer.py'
-      env:
-        key: ${{ secrets.key }} # if run.py requires passwords..etc, set it as secrets
-        
- - name: Run python script
+    - name: Run script
       run: |
         python 'py/code.py'
       env:
-        key: ${{ secrets.key }} # if run.py requires passwords..etc, set it as secrets
+        key: ${{ secrets.key }} # if run.py requires passwords..etc, set it as secrets    
         
+    
     - name: commit files
+      #continue-on-error: true
       run: |
         git config --local user.name actions-user
         git config --local user.email "actions@github.com"
@@ -62,22 +55,10 @@ jobs:
         REPO_KEY: ${{secrets.GITHUB_TOKEN}}
         username: github-actions
 
-    - name: Test 
-      run: |
-        git config --local user.email "action@github.com"
-         git config --local user.name "github-actions"
-         git add --all
-         if [ -z "$(git status --porcelain)" ]; then
-            echo "::set-output name=push::false"
-         else
-            git commit -m "Add changes" -a
-            echo "::set-output name=push::true"
-         fi
-      shell: bash
+
     - name: Push changes
       if: steps.commit.outputs.push == 'true'
       uses: ad-m/github-push-action@master
       with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
-
